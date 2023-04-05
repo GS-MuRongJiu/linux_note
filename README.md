@@ -172,6 +172,7 @@ gedit &
 |/4	|以四位数格式显示年份。|
 |/r	|显示文件的备用数据流。|
 |/?	|在命令提示符处显示帮助。|
+ 
  与linux相比，`dir`支持更丰富的参数
  
  `cd`切换路径，可以通过在后面添加接驱动器符号、完整路径和相对路径来实现路径的转换 
@@ -181,5 +182,32 @@ gedit &
 |/..|回到上一目录|
 |//d|进入相应目录|
 |//?|查看帮助|
+ 
 `cd`用法与linux中类似
+ 
+ ## 配置环境变量
+ 将jdk放置在相应文件
+ 
+ 使用`tar -zxvf jdk-8u221-linux-x64.tar.gz`进行解压
+ 
+ ## 修改环境变量
+ 输入`vi /etc/profile`进行配置
+ 
+ 点击`i`进入编辑模式，输入
+ ```shell
+ JAVA_HOME=/usr/local/java/jdk1.8.0_221
+ CLASSPATH=%JAVA_HOME%/lib:%JAVA_HOME%/jre/lib
+ PATH=$PATH:$JAVA_HOME/bin:$JAVA_HOME/jre/bin
+ export PATH CLASSPATH JAVA_HOME
+ ```
+ 
+ 输入指令`source /etc/profile`即可
+ ## 添加用户
+ `adduser`+用户名
+ 
+ `passwd`+用户名设置密码
+ 
+ `chown -R susu /liususu`更改目录所有者
+ 
+ `chmod -R 755 /liususu`更改目录权限
  
